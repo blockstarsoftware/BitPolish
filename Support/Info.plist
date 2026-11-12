@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleInfoDictionaryVersion</key><string>6.0</string>
+    <key>CFBundleName</key><string>BitPolish</string>
+    <key>CFBundleDisplayName</key><string>BitPolish</string>
+    <!-- Placeholder bundle identifier until the Blockstar Software GitHub
+         account exists. -->
+    <key>CFBundleIdentifier</key><string>com.blockstarsoftware.BitPolish</string>
+    <key>CFBundleExecutable</key><string>BitPolish</string>
+    <key>CFBundlePackageType</key><string>APPL</string>
+    <key>CFBundleShortVersionString</key><string>0.1.3</string>
+    <key>CFBundleVersion</key><string>4</string>
+    <key>LSMinimumSystemVersion</key><string>14.0</string>
+    <key>CFBundleIconFile</key><string>BitPolish</string>
+    <key>LSUIElement</key><true/>
+    <key>NSHumanReadableCopyright</key><string>© 2026 Eli Block. Free and open source under the MIT License.</string>
+    <key>NSHighResolutionCapable</key><true/>
+    <!-- Software updates (Sparkle). Updates stay off until both the feed and
+         the public signing key are filled in (see README, Releasing). -->
+    <key>SUFeedURL</key><string>https://blockstarsoftware.com/bitpolish/appcast.xml</string>
+    <key>SUPublicEDKey</key><string>F5iWaBmcjhBHK9csJvW3Ql+TO+5l+xw3gsAChkGQWkw=</string>
+    <key>SUEnableAutomaticChecks</key><true/>
+    <key>SUScheduledCheckInterval</key><integer>86400</integer>
+</dict>
+</plist>

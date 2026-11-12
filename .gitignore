@@ -1,0 +1,10 @@
+.build/
+build/
+.swiftpm/
+*.app
+.DS_Store
+Tools/verification/reference_int24.npy
+Tools/verification/reference.wav
+Tools/verification/*.m4a
+Tools/verification/*.f32
+Tools/verification/*.f32.log
