@@ -515,6 +515,11 @@ final class SessionController: ObservableObject {
                         completion?()
                         return
                     }
+                    // The pick is now the target, as a pick while Off is, so
+                    // switchOn locks it where the sound already is. Without
+                    // this, onTarget still named the old DAC (caps are re-read
+                    // in the background) and the sound went straight back.
+                    self.pickedUID = choice.uid
                     self.refreshDeviceState()
                     self.switchOn { [weak self] in
                         self?.movingOutput = false
