@@ -40,12 +40,11 @@ Switch it off, and everything goes back the way it was.
 
 Free and open source. Made by Blockstar Software.
 
-> Early release. Apple Music only. Works with every codec Music decodes; uncompressed AIFF/WAV formats are not detected yet.
+> Apple Music only. Rate following works with Apple Lossless, AAC and MP3; uncompressed AIFF and WAV files aren't detected yet.
 
 ## Contents
 
 - [Why it exists](#why-it-exists)
-- [What exactly does BitPolish do?](#what-exactly-does-bitpolish-do)
 - [Features](#features)
 - [Who it's for](#who-its-for)
 - [Built for listening sessions](#built-for-listening-sessions)
@@ -79,7 +78,7 @@ And the details that make it trustworthy:
 - **Tells you the truth.** An asterisk beside the rate in the menu bar means playback is not bit-perfect right now, because the volume is below 100% or your DAC refuses the rate. The panel says which. Rates your DAC will not take are faded.
 - **Restores everything.** Before it touches your DAC, BitPolish saves its format. Switching off, quitting, relaunching after a crash or replugging the DAC brings it back exactly as it was. BitPolish never changes volume.
 - **Never surprises your speakers.** If BitPolish moved your sound to the DAC, it stays there until you click **Return to …**, so nothing suddenly plays out loud.
-- **Choose your DAC.** With more than one DAC, pick which in the **DAC** menu. While Off, the pick only sets the DAC for the session.
+- **Choose your DAC.** With more than one DAC, pick which in the **DAC** menu. While Off, the pick only sets the DAC for the session; while On, it moves the session to the other DAC.
 - **Leave it on, or not.** **Open at login**, **Keep Bit-Perfect Listening on** and **Show in Dock** are in the Option-click Details. By default it does none of them.
 - **Updates itself while it runs.** A daily check through [Sparkle](https://sparkle-project.org); nothing runs when BitPolish is not open.
 
@@ -110,7 +109,7 @@ Between sessions, BitPolish leaves your Mac alone. It doesn't start at login unl
 > **Protect your ears and your speakers.** For bit-perfect playback, the Mac and Music stay at 100% volume, which sends the full signal to your DAC. Before you raise them, turn your DAC or amp all the way down, then bring the level up slowly once music is playing. This matters most with headphones.
 
 1. Connect your DAC (USB, or a USB-to-optical adapter, HDMI, Thunderbolt) and turn it, or your amp, down.
-2. Launch BitPolish, click its readout in the menu bar, and switch on **Bit-Perfect Listening**. If the Mac's sound isn't already on your DAC, BitPolish switches it there. With more than one DAC, choose which in BitPolish's **Output** menu first: while Off, the menu only picks the DAC for the session (and shows what it accepts), and the Mac's output doesn't change until you switch on. BitPolish remembers the pick. While On, the Output menu moves between DACs. While Off, BitPolish never changes the Mac's output, except **Return to …** when you click it.
+2. Launch BitPolish, click its readout in the menu bar, and switch on **Bit-Perfect Listening**. If the Mac's sound isn't already on your DAC, BitPolish switches it there. With more than one DAC, choose which in BitPolish's **DAC** menu first: while Off, the menu only picks the DAC for the session (and shows what it accepts), and the Mac's output doesn't change until you switch on. BitPolish remembers the pick. While On, the DAC menu moves between DACs. While Off, BitPolish never changes the Mac's output, except **Return to …** when you click it.
 3. With the DAC or amp still down, set the Mac's volume and Music's volume slider to **100%**, then raise your listening level on the DAC or amp.
 4. Play music in Apple Music.
 
@@ -118,11 +117,11 @@ An asterisk on the menu-bar rate ("96 kHz*") means playback isn't bit-perfect ri
 
 To skip the gap when the next track is at a different sample rate: pause Music, click that rate under **Manually Prime DAC** in the panel, then play the track. The rates sit in two rows by family (44.1 kHz family on top, 48 kHz below); faded ones are rates your DAC doesn't accept, and tracks at those rates play at the next rate up, resampled.
 
-While Bit-Perfect Listening is off, the panel lists every rate and bit depth your DAC accepts. While it's on, the Manually Prime DAC buttons show the same thing, and holding Option while you click the readout brings the full list back. The Details section also holds three settings: **Open at login**, **Keep Bit-Perfect Listening on**, and **Show in Dock**, which gives BitPolish a Dock icon while it runs (click it to open the panel; its menu flips the switch). About BitPolish (with Check for Updates…) and Quit are at the bottom of the panel; the readout's right-click menu has About, Check for Updates… and Quit.
+While Bit-Perfect Listening is off, the panel lists every rate and bit depth your DAC accepts. While it's on, the Manually Prime DAC buttons show the same thing, and holding Option while you click the readout brings the full list back. The Details section also holds three settings: **Open at login**, **Keep Bit-Perfect Listening on**, and **Show in Dock**, which gives BitPolish a Dock icon while it runs (click it to open the panel; its menu flips the switch). About BitPolish (with Check for Updates…) and Quit are at the bottom of the panel; the readout's right-click menu has About BitPolish, Settings…, Welcome to BitPolish, Check for Updates… and Quit. **Settings…** (⌘,) opens the panel with Details. If you take the readout out of the menu bar (⌘-drag it off), BitPolish shows a Dock icon instead, and the Dock icon's menu has **Show in Menu Bar** to bring it back.
 
 Switch it off (or quit BitPolish) when you're done; the DAC goes back to how it was. If BitPolish moved your sound from the speakers (or Bluetooth, AirPlay) to the DAC, the sound stays on the DAC until you click **Return to …** in the panel, so nothing suddenly plays out loud; a session that started on another DAC returns there automatically.
 
-The first time BitPolish opens, a short welcome window explains all this once. It doesn't come back after updates; to see it again, run `defaults delete com.blockstarsoftware.BitPolish WelcomeShown` in Terminal and relaunch.
+The first time BitPolish opens, a short welcome window explains all this once. It doesn't come back after updates; to see it again, choose **Welcome to BitPolish** from the readout's right-click menu.
 
 ## Know your chain's limits
 
@@ -150,7 +149,7 @@ BitPolish can only see as far as the device plugged into your Mac. It fades the 
 - **No permission prompts.** No AppleScript, Accessibility, audio recording or Media Library access. BitPolish reads Music's own log (track formats, and the title of a track already playing when BitPolish launches), its track-change notifications, and the system's open-file table.
 - **Hands off when Off.** It reads, but changes nothing (except **Return to …**, when you click it).
 - **External DACs only.** Built-in output, Bluetooth, AirPlay and virtual devices are refused (they can't be bit-perfect or aren't DACs).
-- **No Dock icon, and no launch at login, unless you choose them.** Launch it when you want to listen, or check **Open at login** or **Show in Dock** in the Option-click Details.
+- **No Dock icon, and no launch at login, unless you choose them.** Launch it when you want to listen, or check **Open at login** or **Show in Dock** in the Option-click Details. The Dock icon also appears if you take the readout out of the menu bar.
 - **Updates only while it runs.** A daily check through Sparkle while BitPolish is open; nothing runs when it isn't.
 
 ## Tested, not assumed
@@ -163,7 +162,7 @@ Music's output was captured on its way to the DAC and compared sample by sample 
 
 ## Requirements
 
-- A Mac with Apple Silicon (M1 or later) and macOS 14 Sonoma or later.
+- A Mac with Apple Silicon (M1 or later) and macOS 14 Sonoma or later. Tested on macOS 27.
 - An **administrator account** for rate following: BitPolish reads Music's log with `log stream`, which macOS allows only for admin accounts. On a standard account BitPolish says so in its panel; the bit-depth lock still works.
 
 ## Limitations
@@ -176,12 +175,14 @@ Music's output was captured on its way to the DAC and compared sample by sample 
 
 ## Building from source
 
-Apple's Command Line Tools with Swift 6 or later are enough; Xcode is not required.
+Apple's Command Line Tools are enough (tested with version 27.2, Swift 6.4); Xcode is not required.
 
 ```bash
-./build.sh
-swift run BitPolishChecks
+./build.sh                  # builds build/BitPolish.app
+swift run BitPolishChecks   # runs the self-tests; no DAC needed
 ```
+
+The self-tests check BitPolish's core logic (format matching, the bit-depth choice, reading Music's log) and end with "All checks passed."
 
 Releasing, software updates, how it works, the source map and the developer test hooks are in [`docs/DEVELOPING.md`](docs/DEVELOPING.md).
 
