@@ -16,7 +16,7 @@ Keep using Apple Music. BitPolish adds the one thing it cannot do: it sets your 
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/images/panel-dark.png">
-    <img src="docs/images/panel-light.png" alt="The BitPolish panel: green Bit Perfect status, the rate going to the DAC, the source file, the locked bit depth, Manually Prime DAC, and the output" width="320">
+    <img src="docs/images/panel-light.png" alt="The BitPolish panel: green Bit Perfect status, the rate going to the DAC, the source file, the locked bit depth, Manually Prime DAC, and the DAC" width="320">
   </picture>
 </p>
 
